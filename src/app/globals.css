@@ -2,9 +2,26 @@
 @plugin "daisyui";
 
 
+body{
+    background-color: #0C0D10;
+    color: white;
+}
+
 .bg-primary{
     background: #C2F800;
 }
+.bg-secondary{
+    background-color: #15171D;
+}
 .text-primary{
     color: #C2F800;
+}
+.text-secondary{
+    color: #9CA3AF;
+}
+.btn-primary{
+    background-color: #C2F800;
+    color: #15171D;
+    border: none;
+    box-shadow: none;
 }

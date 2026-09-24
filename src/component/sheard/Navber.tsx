@@ -11,23 +11,23 @@ const Navber = () => {
     console.log(pathName)
 
     const links = <>
-        <li className={`text-lg ${pathName === '/workouts'? 'text-primary bg-[#C2F80030] rounded-full' : ''}`}><Link href='/workouts' >Workouts</Link></li>
-        <li className={`text-lg ${pathName === '/myplan'? 'text-primary bg-[#C2F80030] rounded-full' : ''}`}><Link href='/myplan' >My Plan</Link></li>
+        <li className={`text-lg ${pathName === '/workouts'? 'text-primary bg-[#C2F80030] rounded-full' : 'text-secondary'}`}><Link href='/workouts' >Workouts</Link></li>
+        <li className={`text-lg ${pathName === '/myplan'? 'text-primary bg-[#C2F80030] rounded-full' : 'text-secondary'}`}><Link href='/myplan' >My Plan</Link></li>
     </>
 
     const badges = <>
         <Link
             href="/status"
-            className="group flex items-center gap-2 text-lg font-medium"><span>Plan</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full bg-primary px-2 text-lg font-bold text-black">0</span>
+            className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Plan</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full bg-primary px-2 text-lg font-bold text-black">0</span>
         </Link>
         <Link
             href="/status"
-            className="group flex items-center gap-2 text-lg font-medium"><span>Saved</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full border border-[#2D313B] px-2 text-lg font-bold">0</span>
+            className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Saved</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full border border-[#2D313B] px-2 text-lg font-bold">0</span>
         </Link>
     </>
 
     return (
-        <nav className='shadow-sm p-2'>
+        <nav className='border-b-2 border-[#1C1F26] p-2'>
             <div className='container mx-auto navbar'>
                 <div className="navbar-start">
                     <div className="dropdown">
