@@ -1,4 +1,7 @@
+
 import ExerciseInfoTable from '@/component/ExerciseDetails/ExerciseInfoTable';
+import SavePlanButton from '@/component/ExerciseDetails/SavePlanButton';
+import TodysPlanButton from '@/component/ExerciseDetails/TodysPlanButton';
 import { ExerciseType } from '@/types/exercise.type';
 import Image from 'next/image';
 import React from 'react';
@@ -28,7 +31,12 @@ const ExerciseDetailsPage = async ({ params }: ExerciseDetailsPageProps) => {
     if (!exercise) {
         return <div>Exercise not found</div>;
     }
-    console.log(exercise)
+    // console.log(exercise)
+
+
+    
+    
+
     return (
         <section className='my-12'>
             <div className='container mx-auto grid grid-cols-2 gap-6'>
@@ -66,8 +74,8 @@ const ExerciseDetailsPage = async ({ params }: ExerciseDetailsPageProps) => {
                         </ul>
                     </div>
                     <div className='flex gap-4'>
-                        <button className='btn btn-primary rounded-xl text-lg'><LuCalendarPlus2 /> Add to today's plan</button>
-                        <button className='btn btn-secondary rounded-xl text-lg'><MdOutlineBookmarkBorder /> Save for later</button>
+                        <TodysPlanButton exercise={exercise}></TodysPlanButton>
+                        <SavePlanButton exercise={exercise}></SavePlanButton>
                     </div>
                 </div>
             </div>

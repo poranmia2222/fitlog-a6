@@ -1,11 +1,15 @@
 'use client'
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext } from 'react';
 import logoIcon from '../../assets/logo.png'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ExercisesContext } from '@/context/ExercisesContext';
 
 const Navber = () => {
+
+    const {todaysPlan} = useContext(ExercisesContext)
+
 
     const pathName = usePathname()
     // console.log(pathName)
@@ -18,7 +22,7 @@ const Navber = () => {
     const badges = <>
         <Link
             href="/myplan"
-            className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Plan</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full bg-primary px-2 text-lg font-bold text-black">0</span>
+            className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Plan</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full bg-primary px-2 text-lg font-bold text-black">{todaysPlan.length}</span>
         </Link>
         <Link
             href="/myplan"

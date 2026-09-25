@@ -1,10 +1,14 @@
 "use client";
 import PlanTabs from "@/component/sheard/myplane/PlanTabs";
 import SortDropdown from "@/component/sheard/myplane/SortDropdown";
-import React, { useState } from "react";
+import { ExercisesContext } from "@/context/ExercisesContext";
+import React, { useContext, useState } from "react";
 
 const MyPlan = () => {
     const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
+
+   const { todaysPlan } = useContext(ExercisesContext)
+   console.log(todaysPlan)
 
     return (
         <section>
@@ -31,17 +35,24 @@ const MyPlan = () => {
 
                     <div className="mr-8 space-y-2 border-r-2 border-[#1C1F26]">
                         <p>Exercises</p>
-                        <h2 className="text-6xl font-bold text-primary">2</h2>
+                        <h2 className="text-6xl font-bold text-primary">
+                            {
+                                todaysPlan.length
+                            }
+                        </h2>
                     </div>
 
                     <div className="mr-8 space-y-2 border-r-2 border-[#1C1F26]">
                         <p>Minutes</p>
-                        <h2 className="text-6xl font-bold">2</h2>
+                        <h2 className="text-6xl font-bold">
+                            {todaysPlan.reduce((total, item) => total + item.duration, 0)}</h2>
                     </div>
 
                     <div className="space-y-2">
                         <p>Calories</p>
-                        <h2 className="text-6xl font-bold">2</h2>
+                        <h2 className="text-6xl font-bold">
+                            {todaysPlan.reduce((total, item) => total + item.caloriesBurned, 0)}
+                        </h2>
                     </div>
                 </div>
 
