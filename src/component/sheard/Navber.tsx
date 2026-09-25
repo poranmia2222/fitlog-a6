@@ -17,11 +17,11 @@ const Navber = () => {
 
     const badges = <>
         <Link
-            href="/status"
+            href="/myplan"
             className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Plan</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full bg-primary px-2 text-lg font-bold text-black">0</span>
         </Link>
         <Link
-            href="/status"
+            href="/myplan"
             className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Saved</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full border border-[#2D313B] px-2 text-lg font-bold">0</span>
         </Link>
     </>
