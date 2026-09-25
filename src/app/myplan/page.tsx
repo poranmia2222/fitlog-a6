@@ -1,17 +1,19 @@
 "use client";
 import PlanTabs from "@/component/sheard/myplane/PlanTabs";
 import SortDropdown from "@/component/sheard/myplane/SortDropdown";
+import SaveExercisePlanCard from "@/component/sheard/SaveExercisePlanCard";
+import TodaysExercisePlanCard from "@/component/sheard/TodaysExercisePlanCard";
 import { ExercisesContext } from "@/context/ExercisesContext";
 import React, { useContext, useState } from "react";
 
 const MyPlan = () => {
     const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
 
-   const { todaysPlan } = useContext(ExercisesContext)
-   console.log(todaysPlan)
+    const { todaysPlan, savePlan } = useContext(ExercisesContext)
+    console.log(todaysPlan)
 
     return (
-        <section>
+        <section className="min-h-screen">
             <div className="container mx-auto my-10 space-y-6">
 
                 {/* ===================================================== */}
@@ -37,7 +39,7 @@ const MyPlan = () => {
                         <p>Exercises</p>
                         <h2 className="text-6xl font-bold text-primary">
                             {
-                                todaysPlan.length
+                                activeTab === 'today' ? todaysPlan.length : savePlan.length
                             }
                         </h2>
                     </div>
@@ -45,13 +47,18 @@ const MyPlan = () => {
                     <div className="mr-8 space-y-2 border-r-2 border-[#1C1F26]">
                         <p>Minutes</p>
                         <h2 className="text-6xl font-bold">
-                            {todaysPlan.reduce((total, item) => total + item.duration, 0)}</h2>
+                            {
+                                activeTab === 'today'? todaysPlan.reduce((total, item) => total + item.duration, 0) : savePlan.reduce((total, item) => total + item.duration, 0)
+                            }
+                        </h2>
                     </div>
 
                     <div className="space-y-2">
                         <p>Calories</p>
                         <h2 className="text-6xl font-bold">
-                            {todaysPlan.reduce((total, item) => total + item.caloriesBurned, 0)}
+                            {
+                                activeTab === 'today'? todaysPlan.reduce((total, item) => total + item.caloriesBurned, 0) : savePlan.reduce((total, item) => total + item.caloriesBurned, 0)
+                            }
                         </h2>
                     </div>
                 </div>
@@ -68,20 +75,50 @@ const MyPlan = () => {
                         />
                         <SortDropdown />
                     </div>
-                    
+
                     {/* ===================================================== */}
                     {/* Content */}
                     {/* ===================================================== */}
 
-                    <div className="my-10 h-100 rounded-2xl border-2 border-[#1C1F26] bg-secondary p-8 py-10">
+                    <div>
+                        {(todaysPlan.length === 0 && activeTab === 'today') ?
+                            <div className="my-10 h-100 rounded-2xl border-2 border-[#1C1F26] bg-secondary p-8 py-10 text-center flex justify-center items-center">
 
-                        {activeTab === "today" ? (
-                            <p>Today's Plan</p>
-                        ) : (
-                            <p>Saved Exercises</p>
-                        )}
+                                <div className="space-y-4">
+                                    <h1 className="text-2xl font-bold">NOTHING HERE YET</h1>
+                                    <p className="text-secondary">Browse the library and add a lift to get today moving.</p>
+                                    <button className="btn btn-primary rounded-4xl">Go to workouts</button>
+                                </div>
 
+                            </div> : ''
+                        }
+                        {(savePlan.length === 0 && activeTab === 'saved') ?
+                            <div className="my-10 h-100 rounded-2xl border-2 border-[#1C1F26] bg-secondary p-8 py-10 text-center flex justify-center items-center">
+
+                                <div className="space-y-4">
+                                    <h1 className="text-2xl font-bold">NOTHING HERE YET</h1>
+                                    <p className="text-secondary">Browse the library and add a lift to get today moving.</p>
+                                    <button className="btn btn-primary rounded-4xl">Go to workouts</button>
+                                </div>
+
+                            </div> : ''
+                        }
                     </div>
+
+
+                    {
+                        activeTab === 'today' ? <div className="grid grid-cols-1 gap-4 my-10">
+                            {
+                                todaysPlan &&
+                                todaysPlan.map(exercise => <TodaysExercisePlanCard key={exercise.id} exercise={exercise}></TodaysExercisePlanCard>)
+                            }
+                        </div> : <div className="grid grid-cols-1 gap-4 my-10">
+                            {
+                                savePlan &&
+                                savePlan.map(exercise => <SaveExercisePlanCard key={exercise.id} exercise={exercise}></SaveExercisePlanCard>)
+                            }
+                        </div>
+                    }
                 </div>
 
             </div>

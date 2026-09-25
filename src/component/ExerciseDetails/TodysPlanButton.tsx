@@ -11,7 +11,7 @@ const TodysPlanButton = ({ exercise }: { exercise: ExerciseType }) => {
 
     const handleTodaysPlan = (exercise: ExerciseType) => {
         setTodaysPlan([...todaysPlan, exercise])
-        toast.error(`${exercise.name} added to today's plan!`);
+        toast.success(`${exercise.name} added to plan!`);
     }
     return (
         <>

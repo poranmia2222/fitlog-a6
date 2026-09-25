@@ -8,7 +8,7 @@ import { ExercisesContext } from '@/context/ExercisesContext';
 
 const Navber = () => {
 
-    const {todaysPlan} = useContext(ExercisesContext)
+    const {todaysPlan, savePlan} = useContext(ExercisesContext)
 
 
     const pathName = usePathname()
@@ -26,7 +26,7 @@ const Navber = () => {
         </Link>
         <Link
             href="/myplan"
-            className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Saved</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full border border-[#2D313B] px-2 text-lg font-bold">0</span>
+            className="group flex items-center gap-2 text-lg font-medium text-secondary"><span>Saved</span><span className="flex min-w-8 h-8 items-center justify-center rounded-full border border-[#2D313B] px-2 text-lg font-bold">{savePlan.length}</span>
         </Link>
     </>
 
