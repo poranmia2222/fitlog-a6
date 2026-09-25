@@ -6,14 +6,15 @@ interface ExercisesContextType {
     todaysPlan: ExerciseType[],
     setTodaysPlan: Dispatch<SetStateAction<ExerciseType[]>>,
     savePlan: ExerciseType[],
-    setSavePlan: Dispatch<SetStateAction<ExerciseType[]>>
+    setSavePlan: Dispatch<SetStateAction<ExerciseType[]>>,
+
 }
 
 export const ExercisesContext = createContext<ExercisesContextType>({
     todaysPlan: [],
-    setTodaysPlan: () => {},
+    setTodaysPlan: () => { },
     savePlan: [],
-    setSavePlan: () => {}
+    setSavePlan: () => { }
 })
 
 const ExercisesProvider = ({ children }: { children: ReactNode }) => {

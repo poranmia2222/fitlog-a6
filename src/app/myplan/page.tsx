@@ -5,12 +5,53 @@ import SaveExercisePlanCard from "@/component/sheard/SaveExercisePlanCard";
 import TodaysExercisePlanCard from "@/component/sheard/TodaysExercisePlanCard";
 import { ExercisesContext } from "@/context/ExercisesContext";
 import React, { useContext, useState } from "react";
+import { Bounce, toast } from "react-toastify";
 
 const MyPlan = () => {
     const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
 
-    const { todaysPlan, savePlan } = useContext(ExercisesContext)
-    console.log(todaysPlan)
+    const { todaysPlan, setTodaysPlan, savePlan, setSavePlan } = useContext(ExercisesContext)
+
+    const handleRemoveFromToday = (id: number) => {
+
+        const removeditem = todaysPlan.find(item => item.id === id)
+
+        setTodaysPlan((prev) =>
+            prev.filter((exercise) => exercise.id !== id)
+        );
+
+        toast.warn(`${removeditem?.name} has been removed!`);
+    };
+    
+    const handleRemoveFromSaved = (id: number) => {
+
+        const removeditem = savePlan.find(item => item.id === id)
+
+        setSavePlan((prev) =>
+            prev.filter((exercise) => exercise.id !== id)
+        );
+
+        toast.warn(`${removeditem?.name} has been removed!`);
+    };
+
+    const handleMarkAsDone = (id: number) => {
+        setTodaysPlan((prev) =>
+            prev.filter((exercise) => exercise.id !== id)
+        );
+        toast.success(' Wow you did it!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+        });
+
+    }
+
 
     return (
         <section className="min-h-screen">
@@ -48,7 +89,7 @@ const MyPlan = () => {
                         <p>Minutes</p>
                         <h2 className="text-6xl font-bold">
                             {
-                                activeTab === 'today'? todaysPlan.reduce((total, item) => total + item.duration, 0) : savePlan.reduce((total, item) => total + item.duration, 0)
+                                activeTab === 'today' ? todaysPlan.reduce((total, item) => total + item.duration, 0) : savePlan.reduce((total, item) => total + item.duration, 0)
                             }
                         </h2>
                     </div>
@@ -57,7 +98,7 @@ const MyPlan = () => {
                         <p>Calories</p>
                         <h2 className="text-6xl font-bold">
                             {
-                                activeTab === 'today'? todaysPlan.reduce((total, item) => total + item.caloriesBurned, 0) : savePlan.reduce((total, item) => total + item.caloriesBurned, 0)
+                                activeTab === 'today' ? todaysPlan.reduce((total, item) => total + item.caloriesBurned, 0) : savePlan.reduce((total, item) => total + item.caloriesBurned, 0)
                             }
                         </h2>
                     </div>
@@ -110,12 +151,19 @@ const MyPlan = () => {
                         activeTab === 'today' ? <div className="grid grid-cols-1 gap-4 my-10">
                             {
                                 todaysPlan &&
-                                todaysPlan.map(exercise => <TodaysExercisePlanCard key={exercise.id} exercise={exercise}></TodaysExercisePlanCard>)
+                                todaysPlan.map(exercise => <TodaysExercisePlanCard
+                                    key={exercise.id}
+                                    exercise={exercise}
+                                    onMarkDone={handleMarkAsDone}
+                                    onRemove={handleRemoveFromToday}></TodaysExercisePlanCard>)
                             }
                         </div> : <div className="grid grid-cols-1 gap-4 my-10">
                             {
                                 savePlan &&
-                                savePlan.map(exercise => <SaveExercisePlanCard key={exercise.id} exercise={exercise}></SaveExercisePlanCard>)
+                                savePlan.map(exercise => <SaveExercisePlanCard
+                                    key={exercise.id}
+                                    exercise={exercise}
+                                    onRemove={handleRemoveFromSaved}></SaveExercisePlanCard>)
                             }
                         </div>
                     }

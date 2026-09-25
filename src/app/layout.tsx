@@ -4,7 +4,7 @@ import "./globals.css";
 import Navber from "@/component/sheard/Navber";
 import Footer from "@/component/sheard/Footer";
 import ExercisesProvider from "@/context/ExercisesContext";
-import { ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +32,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navber></Navber>
           {children}
           <Footer></Footer>
-          <ToastContainer />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </ExercisesProvider>
       </body>
     </html>

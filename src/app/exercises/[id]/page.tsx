@@ -33,10 +33,6 @@ const ExerciseDetailsPage = async ({ params }: ExerciseDetailsPageProps) => {
     }
     // console.log(exercise)
 
-
-    
-    
-
     return (
         <section className='my-12'>
             <div className='container mx-auto grid grid-cols-2 gap-6'>

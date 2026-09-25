@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import {
     IoCheckmark,
     IoClose,
@@ -10,13 +10,16 @@ import {
 import { FaFire, FaStar } from "react-icons/fa";
 import { ExerciseType } from "@/types/exercise.type";
 import Link from "next/link";
+import { ExercisesContext } from "@/context/ExercisesContext";
 
 interface PlanExerciseCardProps {
     exercise: ExerciseType;
-    onMarkDone?: (id: number) => void;
-    onRemove?: (id: number) => void;
+    onRemove: (id: number) => void
+    onMarkDone: (id: number) => void
+
 }
-const TodaysExercisePlanCard = ({ exercise, onMarkDone, onRemove }: PlanExerciseCardProps) => {
+const TodaysExercisePlanCard = ({ exercise, onRemove, onMarkDone }: PlanExerciseCardProps) => {
+
 
     return (
         <div className="flex items-center gap-4 rounded-2xl border border-[#292E38] bg-[#14171E] p-3">
@@ -94,7 +97,7 @@ const TodaysExercisePlanCard = ({ exercise, onMarkDone, onRemove }: PlanExercise
                 {/* Remove */}
                 <button
                     type="button"
-                    onClick={() => onRemove?.(exercise.id)}
+                    onClick={() => onRemove(exercise.id)}
                     className="text-gray-500 transition hover:text-white"
                     aria-label="Remove exercise"
                 >
