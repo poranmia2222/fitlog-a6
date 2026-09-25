@@ -10,7 +10,6 @@ import {
 import { FaFire, FaStar } from "react-icons/fa";
 import { ExerciseType } from "@/types/exercise.type";
 import Link from "next/link";
-import { ExercisesContext } from "@/context/ExercisesContext";
 
 interface PlanExerciseCardProps {
     exercise: ExerciseType;

@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
+import React, { SetStateAction } from "react";
 
 interface PlanTabsProps {
   activeTab: "today" | "saved";
-  setActiveTab: React.Dispatch<
-    React.SetStateAction<"today" | "saved">
+  setActiveTab: React.Dispatch<SetStateAction<"today" | "saved">
   >;
 }
 

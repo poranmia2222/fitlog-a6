@@ -12,10 +12,9 @@ import Link from "next/link";
 
 interface PlanExerciseCardProps {
     exercise: ExerciseType;
-    onMarkDone?: (id: number) => void;
     onRemove?: (id: number) => void;
 }
-const SaveExercisePlanCard = ({ exercise, onMarkDone, onRemove }: PlanExerciseCardProps) => {
+const SaveExercisePlanCard = ({ exercise, onRemove }: PlanExerciseCardProps) => {
 
     return (
         <div className="flex items-center gap-4 rounded-2xl border border-[#292E38] bg-[#14171E] p-3">

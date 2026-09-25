@@ -1,16 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import {
   IoIosArrowDown,
   IoIosArrowUp,
 } from "react-icons/io";
 
-const SortDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState("Duration");
+type SortOption = "Duration" | "Calories" | "Rating";
 
-  const options = ["Duration", "Calories", "Rating"];
+interface SortDropdownProps {
+  setSortBy: Dispatch<SetStateAction<SortOption>>;
+}
+
+const SortDropdown = ({ setSortBy }: SortDropdownProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState<SortOption>("Duration");
+
+  const options: SortOption[] = [
+    "Duration",
+    "Calories",
+    "Rating",
+  ];
 
   return (
     <div className="flex items-center gap-2">
@@ -19,6 +29,7 @@ const SortDropdown = () => {
       <div className="relative w-30">
         {/* Dropdown Button */}
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
           className="flex w-full items-center justify-between rounded-xl border-2 border-[#252A35] bg-secondary p-2"
         >
@@ -36,9 +47,11 @@ const SortDropdown = () => {
           <div className="absolute z-10 mt-2 w-full rounded-xl border-2 border-[#252A35] bg-secondary p-1">
             {options.map((option) => (
               <button
+                type="button"
                 key={option}
                 onClick={() => {
                   setSelected(option);
+                  setSortBy(option);
                   setIsOpen(false);
                 }}
                 className="block w-full rounded-lg p-2 text-left hover:bg-[#252A35] hover:font-bold"

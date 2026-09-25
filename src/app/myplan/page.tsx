@@ -4,6 +4,7 @@ import SortDropdown from "@/component/sheard/myplane/SortDropdown";
 import SaveExercisePlanCard from "@/component/sheard/SaveExercisePlanCard";
 import TodaysExercisePlanCard from "@/component/sheard/TodaysExercisePlanCard";
 import { ExercisesContext } from "@/context/ExercisesContext";
+import { ExerciseType } from "@/types/exercise.type";
 import React, { useContext, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 
@@ -22,7 +23,7 @@ const MyPlan = () => {
 
         toast.warn(`${removeditem?.name} has been removed!`);
     };
-    
+
     const handleRemoveFromSaved = (id: number) => {
 
         const removeditem = savePlan.find(item => item.id === id)
@@ -51,6 +52,23 @@ const MyPlan = () => {
         });
 
     }
+    const [sortBy, setSortBy] = useState<"Duration" | "Calories" | "Rating">("Duration")
+
+    const sortExercise = (exercises: ExerciseType[]): ExerciseType[] => {
+        const sortedExercises = [...exercises];
+        if (sortBy === "Duration") {
+            sortedExercises.sort((a, b) => a.duration - b.duration)
+        }
+        if (sortBy === "Calories") {
+            sortedExercises.sort((a, b) => a.caloriesBurned - b.caloriesBurned)
+        }
+        if (sortBy === "Rating") {
+            sortedExercises.sort((a, b) => b.rating- a.rating)
+        }
+        return sortedExercises
+    }
+
+    sortExercise(todaysPlan)
 
 
     return (
@@ -114,7 +132,8 @@ const MyPlan = () => {
                             activeTab={activeTab}
                             setActiveTab={setActiveTab}
                         />
-                        <SortDropdown />
+                        <SortDropdown 
+                        setSortBy={setSortBy}/>
                     </div>
 
                     {/* ===================================================== */}
@@ -151,7 +170,7 @@ const MyPlan = () => {
                         activeTab === 'today' ? <div className="grid grid-cols-1 gap-4 my-10">
                             {
                                 todaysPlan &&
-                                todaysPlan.map(exercise => <TodaysExercisePlanCard
+                                sortExercise(todaysPlan).map(exercise => <TodaysExercisePlanCard
                                     key={exercise.id}
                                     exercise={exercise}
                                     onMarkDone={handleMarkAsDone}
@@ -160,7 +179,7 @@ const MyPlan = () => {
                         </div> : <div className="grid grid-cols-1 gap-4 my-10">
                             {
                                 savePlan &&
-                                savePlan.map(exercise => <SaveExercisePlanCard
+                                sortExercise(savePlan).map(exercise => <SaveExercisePlanCard
                                     key={exercise.id}
                                     exercise={exercise}
                                     onRemove={handleRemoveFromSaved}></SaveExercisePlanCard>)
