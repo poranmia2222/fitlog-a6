@@ -8,7 +8,7 @@ const getExercises = async () => {
         throw new Error("Failed to fetch workout data");
     }
     const data = await res.json()
-    console.log(data)
+    // console.log(data)
     return data
 }
 

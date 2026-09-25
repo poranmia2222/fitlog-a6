@@ -8,10 +8,10 @@ import { usePathname } from 'next/navigation';
 const Navber = () => {
 
     const pathName = usePathname()
-    console.log(pathName)
+    // console.log(pathName)
 
     const links = <>
-        <li className={`text-lg ${pathName === '/workouts'? 'text-primary bg-[#C2F80030] rounded-full' : 'text-secondary'}`}><Link href='/workouts' >Workouts</Link></li>
+        <li className={`text-lg ${pathName === '/'? 'text-primary bg-[#C2F80030] rounded-full' : 'text-secondary'}`}><Link href='/' >Workouts</Link></li>
         <li className={`text-lg ${pathName === '/myplan'? 'text-primary bg-[#C2F80030] rounded-full' : 'text-secondary'}`}><Link href='/myplan' >My Plan</Link></li>
     </>
 
