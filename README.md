@@ -1,36 +1,201 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ FitLog
 
-## Getting Started
+<p align="center">
+  <strong>Your Personal Workout & Exercise Tracking Companion</strong>
+</p>
 
-First, run the development server:
+<p align="center">
+  A modern fitness web application for discovering exercises, creating workout plans, and managing saved exercises.
+</p>
+
+<p align="center">
+  <a href="https://github.com/poranmia2222/fitlog-a6">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub">
+  </a>
+  <a href="https://fitlog-a6.vercel.app/">
+    <img src="https://img.shields.io/badge/Live-Demo-000000?style=for-the-badge&logo=vercel" alt="Live Demo">
+  </a>
+</p>
+
+---
+
+## 📖 About The Project
+
+**FitLog** is a modern and responsive fitness web application built with **Next.js, React, and TypeScript**.
+
+The application allows users to explore a collection of exercises, view detailed exercise information, create a personalized daily workout plan, save exercises for later, and manage their workout progress.
+
+---
+
+## ✨ Key Features
+
+### 🏋️ Exercise Library
+
+Explore a collection of exercises with detailed information including:
+
+- 💪 Muscle groups
+- 🏋️ Equipment
+- 📊 Difficulty level
+- ⏱️ Duration
+- 🔥 Calories burned
+- 🔢 Sets & reps
+- ⭐ Rating
+- 📝 Exercise description
+
+### 📋 Today's Workout Plan
+
+Create and manage a personalized workout plan for the day.
+
+- Add exercises to today's plan
+- Maximum **5 exercises** per plan
+- Prevent duplicate exercises
+- Remove exercises from the plan
+- Mark exercises as completed
+
+### 💾 Save Exercises
+
+Save exercises that you want to use later.
+
+- Save exercises from the exercise library
+- Prevent duplicate saved exercises
+- Remove saved exercises
+- Manage saved exercises separately from today's workout
+
+### 🔄 Persistent Workout Data
+
+Workout plans are persisted using **LocalStorage**, so your selected exercises remain available after refreshing the browser.
+
+### 📱 Responsive & Modern UI
+
+- 📱 Mobile responsive
+- 💻 Desktop responsive
+- 🎨 Modern dark-themed interface
+- ⚡ Smooth and interactive experience
+- 🔔 Toast notifications
+- 🧩 Reusable React components
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| **Next.js** | React framework and application routing |
+| **TypeScript** | Type-safe development |
+| **Tailwind CSS** | Utility-first styling |
+| **DaisyUI** | UI components |
+| **React Icons** | Interface icons |
+| **React Toastify** | Toast notifications |
+| **React Context API** | Global state management |
+| **LocalStorage** | Client-side data persistence |
+
+---
+
+## 📂 Project Structure
+
+```text
+fitlog-a6/
+├── public/
+├── src/
+│   ├── app/
+│   ├── component/
+│   │   ├── homepage/
+│   │   └── shared/
+│   ├── context/
+│   │   └── ExercisesContext.tsx
+│   └── types/
+│       └── exercise.type.ts
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── README.md
+````
+
+---
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/poranmia2222/fitlog-a6.git
+```
+
+### Navigate to the project
+
+```bash
+cd fitlog-a6
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌐 Explore FitLog
 
-To learn more about Next.js, take a look at the following resources:
+<p align="center">
+  <a href="https://fitlog-a6.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀_Live_Demo-Visit_FitLog-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
+  </a>
+  &nbsp;
+  <a href="https://github.com/poranmia2222/fitlog-a6" target="_blank">
+    <img src="https://img.shields.io/badge/⭐_GitHub-View_Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository">
+  </a>
+</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p align="center">
+  <strong>🏋️ Ready to get started?</strong><br>
+  Explore exercises, build your workout plan, and track your progress with FitLog.
+</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<p align="center">
+  <a href="https://fitlog-a6-umber.vercel.app/" target="_blank">
+    🔥 <strong>Try FitLog Live →</strong>
+  </a>
+  &nbsp;&nbsp;•&nbsp;&nbsp;
+  <a href="https://github.com/poranmia2222/fitlog-a6" target="_blank">
+    💻 <strong>Explore the Code →</strong>
+  </a>
+</p>
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👨‍💻 Author
+
+### Poran Mia
+
+**Full-Stack Web Developer | MERN Stack Learner | UI/UX Enthusiast**
+
+* 💻 GitHub: [@poranmia2222](https://github.com/poranmia2222)
+* 💼 LinkedIn: [Poran Mia](https://linkedin.com/in/poranmia/)
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
+
+---
+
+<p align="center">
+  <strong>🏋️ FitLog — Build Your Plan. Track Your Progress.</strong>
+</p>
