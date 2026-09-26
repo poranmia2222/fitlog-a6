@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ExerciseType } from "@/types/exercise.type";
 import { FaFireAlt, FaRegClock, FaRegStar } from "react-icons/fa";
 
-
 interface ExerciseCardProps {
   exercise: ExerciseType;
 }
@@ -13,7 +12,11 @@ interface ExerciseCardProps {
 const ExerciseCard = ({ exercise }: ExerciseCardProps) => {
   return (
     <Link href={`/exercises/${exercise.id}`}>
-      <div className="w-full rounded-xl md:rounded-3xl border-2 border-[#1C1F26] overflow-hidden">
+      <div className="w-full rounded-xl md:rounded-3xl border-2 border-[#1C1F26] overflow-hidden
+      transition-all duration-300 ease-out
+    hover:border-[#C2F800]
+    hover:-translate-y-1
+    hover:shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
         {/* Image */}
         <div className="relative h-60 lg:h-75 w-full">
           <Image
