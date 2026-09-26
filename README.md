@@ -27,6 +27,21 @@ The application allows users to explore a collection of exercises, view detailed
 
 ---
 
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| **Next.js** | React framework and application routing |
+| **TypeScript** | Type-safe development |
+| **Tailwind CSS** | Utility-first styling |
+| **DaisyUI** | UI components |
+| **React Icons** | Interface icons |
+| **React Toastify** | Toast notifications |
+| **React Context API** | Global state management |
+| **LocalStorage** | Client-side data persistence |
+
+---
+
 ## ✨ Key Features
 
 ### 🏋️ Exercise Library
@@ -73,21 +88,6 @@ Workout plans are persisted using **LocalStorage**, so your selected exercises r
 - ⚡ Smooth and interactive experience
 - 🔔 Toast notifications
 - 🧩 Reusable React components
-
----
-
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| **Next.js** | React framework and application routing |
-| **TypeScript** | Type-safe development |
-| **Tailwind CSS** | Utility-first styling |
-| **DaisyUI** | UI components |
-| **React Icons** | Interface icons |
-| **React Toastify** | Toast notifications |
-| **React Context API** | Global state management |
-| **LocalStorage** | Client-side data persistence |
 
 ---
 
