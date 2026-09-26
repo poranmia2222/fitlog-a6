@@ -165,7 +165,7 @@ http://localhost:3000
 </p>
 
 <p align="center">
-  <a href="https://fitlog-a6-umber.vercel.app/" target="_blank">
+  <a href="https://fitlog-a6-eight.vercel.app/" target="_blank">
     🔥 <strong>Try FitLog Live →</strong>
   </a>
   &nbsp;&nbsp;•&nbsp;&nbsp;
