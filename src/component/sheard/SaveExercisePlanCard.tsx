@@ -25,6 +25,7 @@ const SaveExercisePlanCard = ({ exercise, onRemove }: PlanExerciseCardProps) => 
                         src={exercise.image}
                         alt={exercise.name}
                         fill
+                        loading="eager"
                         sizes="128px"
                         className="object-cover"
                     />

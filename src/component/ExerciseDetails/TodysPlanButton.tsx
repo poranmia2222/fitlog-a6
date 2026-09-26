@@ -14,14 +14,17 @@ const TodysPlanButton = ({ exercise }: { exercise: ExerciseType }) => {
             (item) => item.id === exercise.id
         );
         if (alreadySaved) {
-            toast.info(`${exercise.name} is already in plan!`);
+            toast.warn(`${exercise.name} is already in plan!`);
             return;
         }
         setTodaysPlan([...todaysPlan, exercise]);
         toast.success(`${exercise.name} added to today's plan!`);
     }
+    const isPlanFull = todaysPlan.length >= 5;
     return (
-        <button onClick={() => handleTodaysPlan(exercise)} className='btn btn-primary rounded-xl text-sm sm:w-auto sm:text-base md:text-lg w-full'><LuCalendarPlus2 /> Add to today's plan</button>
+        <button onClick={() => handleTodaysPlan(exercise)}
+            disabled={isPlanFull}
+            className='btn btn-primary rounded-xl text-sm sm:w-auto sm:text-base md:text-lg w-full'><LuCalendarPlus2 /> {isPlanFull ? "Your plan is full (5/5)" : "Add to today's plan"}</button>
     );
 };
 

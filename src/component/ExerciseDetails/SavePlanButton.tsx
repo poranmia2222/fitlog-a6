@@ -14,7 +14,7 @@ const SavePlanButton = ({ exercise }: { exercise: ExerciseType }) => {
             (item) => item.id === exercise.id
         );
         if (alreadySaved) {
-            toast.info(`${exercise.name} is already saved!`);
+            toast.warn(`${exercise.name} is already saved!`);
             return;
         }
         setSavePlan([...savePlan, exercise]);

@@ -5,13 +5,14 @@ import SaveExercisePlanCard from "@/component/sheard/SaveExercisePlanCard";
 import TodaysExercisePlanCard from "@/component/sheard/TodaysExercisePlanCard";
 import { ExercisesContext } from "@/context/ExercisesContext";
 import { ExerciseType } from "@/types/exercise.type";
+import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 
 const MyPlan = () => {
     const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
 
-    const { todaysPlan, setTodaysPlan, savePlan, setSavePlan } = useContext(ExercisesContext)
+    const { todaysPlan, setTodaysPlan, savePlan, setSavePlan} = useContext(ExercisesContext)
 
     const handleRemoveFromToday = (id: number) => {
 
@@ -67,9 +68,6 @@ const MyPlan = () => {
         }
         return sortedExercises
     }
-
-    sortExercise(todaysPlan)
-
 
     return (
         <section className="min-h-screen p-2">
@@ -147,7 +145,7 @@ const MyPlan = () => {
                                 <div className="space-y-4">
                                     <h1 className="text-2xl font-bold">NOTHING HERE YET</h1>
                                     <p className="text-secondary">Browse the library and add a lift to get today moving.</p>
-                                    <button className="btn btn-primary rounded-4xl">Go to workouts</button>
+                                    <button className="btn btn-primary rounded-4xl"><Link href='/'>Go to workouts</Link></button>
                                 </div>
 
                             </div> : ''

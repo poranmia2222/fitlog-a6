@@ -16,7 +16,7 @@ const getExercises = async () => {
 const ExerciseLibrary = async () => {
     const exercises: ExerciseType[] = await getExercises()
     return (
-        <section className='container mx-auto p-2'>
+        <section id='library' className='container mx-auto p-2'>
             <div className='my-10 space-y-2'>
                 <h2 className='text-2xl lg:text-4xl font-bold'>THE LIBRARY</h2>
                 <p className='text-sm md:text-xl text-secondary'>Twelve lifts covering every major muscle group.</p>
