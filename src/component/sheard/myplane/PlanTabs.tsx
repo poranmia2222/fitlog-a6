@@ -12,7 +12,7 @@ const PlanTabs = ({
   setActiveTab,
 }: PlanTabsProps) => {
   return (
-    <div className="flex w-60 rounded-xl border-2 border-[#252A35] bg-[#151820] p-1">
+    <div className="flex w-30 md:w-60 rounded-xl border-2 border-[#252A35] bg-[#151820] p-1">
       <button
         onClick={() => setActiveTab("today")}
         className={`flex-1 rounded-lg p-1 transition-all duration-200 ${

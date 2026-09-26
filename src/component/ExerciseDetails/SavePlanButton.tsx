@@ -22,7 +22,7 @@ const SavePlanButton = ({ exercise }: { exercise: ExerciseType }) => {
     }
     return (
         <>
-            <button onClick={() => handleSavePlan(exercise)} className='btn btn-secondary rounded-xl text-lg'><MdOutlineBookmarkBorder /> Save for later</button>
+            <button onClick={() => handleSavePlan(exercise)} className='btn btn-secondary rounded-xl text-sm sm:w-auto sm:text-base md:text-lg w-full'><MdOutlineBookmarkBorder /> Save for later</button>
 
         </>
     )

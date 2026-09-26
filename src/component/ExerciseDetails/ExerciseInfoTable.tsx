@@ -7,9 +7,9 @@ interface ExerciseInfoTableData{
 
 const ExerciseInfoTable = ({exercise}:ExerciseInfoTableData) => {
     return (
-        <div className="overflow-hidden rounded-2xl border border-[#272C36] bg-[#151922]">
+        <div className="overflow-hidden rounded-xl md:rounded-2xl border border-[#272C36] bg-[#151922]">
             {/* Equipment */}
-            <div className="flex items-center justify-between border-b border-[#272C36] px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#272C36] px-2 py-2 md:px-5 md:py-4">
                 <span className="text-xs font-bold tracking-wider text-gray-400">
                     EQUIPMENT
                 </span>
@@ -20,7 +20,7 @@ const ExerciseInfoTable = ({exercise}:ExerciseInfoTableData) => {
             </div>
 
             {/* Difficulty */}
-            <div className="flex items-center justify-between border-b border-[#272C36] px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#272C36] px-2 py-2 md:px-5 md:py-4">
                 <span className="text-xs font-bold tracking-wider text-gray-400">
                     DIFFICULTY
                 </span>
@@ -31,7 +31,7 @@ const ExerciseInfoTable = ({exercise}:ExerciseInfoTableData) => {
             </div>
 
             {/* Sets */}
-            <div className="flex items-center justify-between border-b border-[#272C36] px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#272C36] px-2 py-2 md:px-5 md:py-4">
                 <span className="text-xs font-bold tracking-wider text-gray-400">
                     SETS
                 </span>
@@ -42,7 +42,7 @@ const ExerciseInfoTable = ({exercise}:ExerciseInfoTableData) => {
             </div>
 
             {/* Reps */}
-            <div className="flex items-center justify-between border-b border-[#272C36] px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#272C36] px-2 py-2 md:px-5 md:py-4">
                 <span className="text-xs font-bold tracking-wider text-gray-400">
                     REPS
                 </span>
@@ -53,7 +53,7 @@ const ExerciseInfoTable = ({exercise}:ExerciseInfoTableData) => {
             </div>
 
             {/* Duration */}
-            <div className="flex items-center justify-between border-b border-[#272C36] px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#272C36] px-2 py-2 md:px-5 md:py-4">
                 <span className="text-xs font-bold tracking-wider text-gray-400">
                     DURATION
                 </span>
@@ -64,7 +64,7 @@ const ExerciseInfoTable = ({exercise}:ExerciseInfoTableData) => {
             </div>
 
             {/* Calories */}
-            <div className="flex items-center justify-between border-b border-[#272C36] px-5 py-4">
+            <div className="flex items-center justify-between border-b border-[#272C36] px-2 py-2 md:px-5 md:py-4">
                 <span className="text-xs font-bold tracking-wider text-gray-400">
                     CALORIES
                 </span>
@@ -75,7 +75,7 @@ const ExerciseInfoTable = ({exercise}:ExerciseInfoTableData) => {
             </div>
 
             {/* Rating */}
-            <div className="flex items-center justify-between px-5 py-4">
+            <div className="flex items-center justify-between px-2 py-2 md:px-5 mdpy-4">
                 <span className="text-xs font-bold tracking-wider text-gray-400">
                     RATING
                 </span>

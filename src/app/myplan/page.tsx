@@ -72,8 +72,8 @@ const MyPlan = () => {
 
 
     return (
-        <section className="min-h-screen">
-            <div className="container mx-auto my-10 space-y-6">
+        <section className="min-h-screen p-2">
+            <div className="container mx-auto my-3 md:my-10 space-y-3 md:space-y-6">
 
                 {/* ===================================================== */}
                 {/* Header */}
@@ -92,20 +92,20 @@ const MyPlan = () => {
                 {/* Statistics */}
                 {/* ===================================================== */}
 
-                <div className="grid grid-cols-3 justify-between rounded-2xl border-2 border-[#1C1F26] bg-secondary p-8 py-10">
+                <div className="grid grid-cols-3 justify-between rounded-2xl border-2 border-[#1C1F26] bg-secondary p-4 md:p-8 py-2 md:py-10">
 
-                    <div className="mr-8 space-y-2 border-r-2 border-[#1C1F26]">
-                        <p>Exercises</p>
-                        <h2 className="text-6xl font-bold text-primary">
+                    <div className="mr-2 md:mr-8 space-y-2 border-r-2 border-[#1C1F26]">
+                        <p className="text-[12px]">Exercises</p>
+                        <h2 className=" text-4xl md:text-6xl font-bold text-primary">
                             {
                                 activeTab === 'today' ? todaysPlan.length : savePlan.length
                             }
                         </h2>
                     </div>
 
-                    <div className="mr-8 space-y-2 border-r-2 border-[#1C1F26]">
-                        <p>Minutes</p>
-                        <h2 className="text-6xl font-bold">
+                    <div className="mr-2 md:mr-8 space-y-2 border-r-2 border-[#1C1F26]">
+                        <p className="text-[12px]">Minutes</p>
+                        <h2 className="text-4xl md:text-6xl font-bold">
                             {
                                 activeTab === 'today' ? todaysPlan.reduce((total, item) => total + item.duration, 0) : savePlan.reduce((total, item) => total + item.duration, 0)
                             }
@@ -113,8 +113,8 @@ const MyPlan = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <p>Calories</p>
-                        <h2 className="text-6xl font-bold">
+                        <p className="text-[12px]">Calories</p>
+                        <h2 className="text-4xl md:text-6xl font-bold">
                             {
                                 activeTab === 'today' ? todaysPlan.reduce((total, item) => total + item.caloriesBurned, 0) : savePlan.reduce((total, item) => total + item.caloriesBurned, 0)
                             }
@@ -126,7 +126,7 @@ const MyPlan = () => {
                 {/* Tabs + Dropdown */}
                 {/* ===================================================== */}
 
-                <div>
+                <div className="my-10">
                     <div className="flex justify-between">
                         <PlanTabs
                             activeTab={activeTab}

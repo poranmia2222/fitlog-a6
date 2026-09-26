@@ -35,8 +35,8 @@ const ExerciseDetailsPage = async ({ params }: ExerciseDetailsPageProps) => {
 
     return (
         <section className='my-12'>
-            <div className='container mx-auto grid grid-cols-2 gap-6'>
-                <div className="relative h-200 w-full overflow-hidden rounded-3xl">
+            <div className='container mx-auto grid md:grid-cols-2 gap-6 p-2'>
+                <div className="relative h-60 md:h-200 w-full overflow-hidden rounded-3xl">
                     <Image
                         src={exercise.image}
                         alt={exercise.name}
@@ -47,7 +47,7 @@ const ExerciseDetailsPage = async ({ params }: ExerciseDetailsPageProps) => {
                 </div>
                 <div className='space-y-6'>
                     <div className='space-y-2'>
-                        <h2 className='text-4xl font-bold'>{exercise.name.toUpperCase()}</h2>
+                        <h2 className='text-2xl md:text-4xl font-bold'>{exercise.name.toUpperCase()}</h2>
                         <p className='text-secondary'>{exercise.description}</p>
                     </div>
                     <div className='flex gap-4 '>{exercise.muscleGroups.map((muscle) => (
@@ -63,13 +63,13 @@ const ExerciseDetailsPage = async ({ params }: ExerciseDetailsPageProps) => {
                         <p className='text-xl font-bold'>INSTRUCTIONS</p>
                         <ul className="list-decimal space-y-3 pl-5 text-secondary">
                             {exercise.instructions.map((instruction, index) => (
-                                <li key={index} className="text-gray-300">
+                                <li key={index} className="text-gray-300 text-sm">
                                     {instruction}
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    <div className='flex gap-4'>
+                    <div className='flex flex-col md:flex-row gap-4'>
                         <TodysPlanButton exercise={exercise}></TodysPlanButton>
                         <SavePlanButton exercise={exercise}></SavePlanButton>
                     </div>
