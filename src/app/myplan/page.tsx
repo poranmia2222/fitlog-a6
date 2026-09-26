@@ -92,7 +92,7 @@ const MyPlan = () => {
                 {/* Statistics */}
                 {/* ===================================================== */}
 
-                <div className="grid grid-cols-3 justify-between rounded-2xl border-2 border-[#1C1F26] bg-secondary p-4 md:p-8 py-2 md:py-10">
+                <div className="grid grid-cols-3 justify-between rounded-2xl border-2 border-[#1C1F26] bg-secondary p-4 md:p-8 py-2 lg:py-10">
 
                     <div className="mr-2 md:mr-8 space-y-2 border-r-2 border-[#1C1F26]">
                         <p className="text-[12px]">Exercises</p>

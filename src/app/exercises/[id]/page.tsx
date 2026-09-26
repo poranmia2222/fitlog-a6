@@ -69,7 +69,7 @@ const ExerciseDetailsPage = async ({ params }: ExerciseDetailsPageProps) => {
                             ))}
                         </ul>
                     </div>
-                    <div className='flex flex-col md:flex-row gap-4'>
+                    <div className='flex flex-col lg:flex-row gap-4'>
                         <TodysPlanButton exercise={exercise}></TodysPlanButton>
                         <SavePlanButton exercise={exercise}></SavePlanButton>
                     </div>

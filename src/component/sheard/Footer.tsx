@@ -5,8 +5,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className='mt-10 border-t-2 border-[#1C1F26]'>
-            <div className='container mx-auto py-6 flex flex-col md:flex-row  justify-between text-center md:text-left space-y-2'>
+        <footer className='mt-4 lg:mt-10 border-t-2 border-[#1C1F26] p-2'>
+            <div className='container mx-auto py-2 lg:py-6 flex flex-col md:flex-row  justify-between text-center md:text-left space-y-2'>
                 <div className='mx-auto md:mx-0'>
                     <Link href='/'><div className='flex gap-2 items-center md:text-left'>
                         <Image src={logoIcon} alt='Logo icon'></Image> <p className='font-bold text-xl'>FITLOG</p>
