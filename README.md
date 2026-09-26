@@ -12,7 +12,7 @@
   <a href="https://github.com/poranmia2222/fitlog-a6">
     <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub">
   </a>
-  <a href="https://fitlog-a6.vercel.app/" target="_blank">
+  <a href="https://fitlog-a6-eight.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/Live-Demo-000000?style=for-the-badge&logo=vercel" alt="Live Demo">
   </a>
 </p>
@@ -150,7 +150,7 @@ http://localhost:3000
 ## 🌐 Explore FitLog
 
 <p align="center">
-  <a href="https://fitlog-a6.vercel.app/" target="_blank">
+  <a href="https://fitlog-a6-eight.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/🚀_Live_Demo-Visit_FitLog-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
   </a>
   &nbsp;
